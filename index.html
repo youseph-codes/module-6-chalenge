@@ -19,17 +19,19 @@
             <div>
                 <div>
                     <!-- search form -->
-                    <div>
+                    <div class="form-container">
                         <form id="search-bar">
                             <div>
-                                <label for="search for a city..."></label>
+                                <label for="search-input">search a city...</label>
                             </div>
+
                             <div>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" id="search-input" name="search-input" class="search-input">
                                 </div>
+
                                 <div>
-                                    <button></button>
+                                    <button type="submit" class="search-button"></button>
                                 </div>
                             </div>
                         </form>
@@ -44,49 +46,53 @@
                 <div>
                     <!-- current weather condition -->
                     <div>
-                        <div>
-                            <h2>Rainy</h2>
-                            <img src="" alt="">
+                        <div class="current-weather-container">
+                            <h2 id="current-title" class="current-title"></h2>
+                            <img id="current-weather-icon" src="" alt="">
                         </div>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <p class="current-temp" id="current-temp"></p>
+                        <p class="current-humidity" id="current-humidity"></p>
+                        <p class="current-wind-speed" id="current-wind-speed"></p>
+                        <p class="current-uv" id="current-uv"></p>
+                        <p class="current-number" id="current-number"></p>
                     </div>
 
+                    <!-- 5 day weather forcast -->
                     <div>
-                        <h2></h2>
-                        <div>
-                            <div>
-                                <p></p>
+                        <h2 class="future-forcast-title" id="future-forcast-title"></h2>
+                        <div class="forcast-card-container" id="forcast-card-container">
+                            <div class="day-card">
+                                <p class="date" id="date-1"></p>
                                 <img src="" alt="">
-                                <p></p>
-                                <p></p>
+                                <p class="day-temp" id="day-temp-1"></p>
+                                <p class="day-humidity" id="day-humidity-1"></p>
                             </div>
-                            <div>
-                                <p></p>
+                            <div class="day-card">
+                                <p class="date" id="date-2"></p>
                                 <img src="" alt="">
-                                <p></p>
-                                <p></p>
+                                <p class="day-temp" id="day-temp-2"></p>
+                                <p class="day-humidity" id="day-humidity-2"></p>
+                            </div><div class="day-card">
+                                <p class="date" id="date-2"></p>
+                                <img src="" alt="">
+                                <p class="day-temp" id="day-temp-2"></p>
+                                <p class="day-humidity" id="day-humidity-2"></p>
+                            </div><div class="day-card">
+                                <p class="date" id="date-3"></p>
+                                <img src="" alt="">
+                                <p class="day-temp" id="day-temp-3"></p>
+                                <p class="day-humidity" id="day-humidity-3"></p>
+                            </div><div class="day-card">
+                                <p class="date" id="date-4"></p>
+                                <img src="" alt="">
+                                <p class="day-temp" id="day-temp-4"></p>
+                                <p class="day-humidity" id="day-humidity-4"></p>
                             </div>
-                            <div>
-                                <p></p>
+                            <div class="day-card">
+                                <p class="date" id="date-5"></p>
                                 <img src="" alt="">
-                                <p></p>
-                                <p></p>
-                            </div>
-                            <div>
-                                <p></p>
-                                <img src="" alt="">
-                                <p></p>
-                                <p></p>
-                            </div>
-                            <div>
-                                <p></p>
-                                <img src="" alt="">
-                                <p></p>
-                                <p></p>
+                                <p class="day-temp" id="day-temp-5"></p>
+                                <p class="day-humidity" id="day-humidity-5"></p>
                             </div>
                         </div>
                     </div>
@@ -96,6 +102,6 @@
     </main>
 
     <!-- scripts -->
-    
+
 </body>
 </html>
