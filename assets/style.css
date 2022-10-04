@@ -1,6 +1,6 @@
 body {
     padding: 1rem 5rem;
-    background: #f1fec6;
+    background-color: #f1fec6;
 }
 
 .header {
@@ -24,4 +24,74 @@ body {
     padding: 2px 20px;
     font-size: 17px;
     border-radius: 15px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    grid-column-gap: 25%;
+    align-items: center;
+    margin: 0px 50px;
+}
+
+.weather {
+    text-align: center;
+    color: #74a4bc;
+}
+
+#city {
+    font-size: 30px;
+}
+
+.weather img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#tempurature {
+    font-size: 50px;
+    margin: 0;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.tempurature-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+#clouds {
+    font-size: 20px;
+    background: #F1FEC6;
+    padding: 2px 20px;
+    border-radius: 15px;
+}
+
+.next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.next p {
+    margin: 3px 0;
+}
+
+p .forecast-header {
+    color: #29339b;
+    background: #74a4bc;
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.time {
+    color: #29339b;
 }
