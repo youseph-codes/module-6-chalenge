@@ -26,3 +26,32 @@ let searchHistory = function(cityName) {
 
     $("#search-input").val("");
 };
+
+var loadSearchHistory = function() {
+    var savedSearchHistory = localStorage.getitem("savedSearches");
+
+    if(!savedSearchHistory) {
+        return false;
+    }
+
+    savedSearchHistory = JSON.parse(savedSearchHistory);
+
+    for(var i = 0; i < savedSearchHistory.length; i++) {
+        searchHistory(savedSearchHistory[i]);
+    }
+};
+
+let currentWeatherBox = function(cityName) {
+    fetch(`api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`)
+    .then(function(rosponse) {
+        return Response.json();
+    })
+    .then(function(response) {
+        let cityLongitude = response.coord.lon;
+        let cityLatitude = response.coord.lat;
+
+        fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+    });
+
+    console.log(currentWeatherBox)
+}
