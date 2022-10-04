@@ -1,0 +1,27 @@
+body {
+    padding: 1rem 5rem;
+    background: #f1fec6;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    color: #74a4bc;
+}
+
+#city-input {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+#search {
+    background: #74a4bc;
+    padding: 2px 20px;
+    font-size: 17px;
+    border-radius: 15px;
+}
