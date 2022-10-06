@@ -9,7 +9,53 @@
 </head>
 
 <body>
-   
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div>
+        <div>
+            <div>
+                <h5>Search for a City!</h5>
+
+                <div>
+                    <input type="text" id="city-input" placeholder="Enter a city...">
+                    <div>
+                        <button id="search-button">Search</button>
+                    </div>
+                </div>
+
+                <button id="clear">Clear History</button>
+                <form id="history"></form>
+            </div>
+
+            <div>
+                <div>
+                    <div>
+                        <div class="card-holder">
+                            <h3 id="city-name" class="city-name"></h3>
+                            <img src="" alt="" id="current-pic">
+                            <p id="tempurature"></p>
+                            <p id="humidity"></p>
+                            <p id="wind-speed"></p>
+                            <p id="UV-index"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="forecast">
+                    <div>
+                        <h3>5-Day Weather Forecast</h3>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- scripts -->
     <script src="./assets/main.js"></script>
 
