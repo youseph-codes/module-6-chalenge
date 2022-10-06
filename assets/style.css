@@ -1,0 +1,26 @@
+body {
+    background: #F0DCCA;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 40px;
+    color: #f0dcca
+}
+
+h5 {
+    font-size: 30px;
+    color: #696d7d
+}
+
+header {
+    background-color: #696d7d;
+}
+
+#search-button {
+    background-color: #CDC6A5;
+}
+
+#clear {
+    background-color: #8D9F87;
+}
