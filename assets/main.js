@@ -13,7 +13,7 @@ function initial() {
     var todayweatherEl = document.getElementById("current-weather");
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
-    const APIKey = "/";
+    const APIKey = "0813b8808a10bc147fa8e0ea7d165313";
 
     function getWeather(city) {
         let queryURL = 
