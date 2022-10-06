@@ -38,7 +38,7 @@ function initial() {
 
             let latitude = response.data.coord.lat;
             let longitude = response.data.coord.lon;
-            let UVQueryURL = "api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+            let UVQueryURL = "api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
             axious.get(UVQueryURL)
             .then(function(response) {
                 let UVIndex = document.createElement("span");
@@ -57,7 +57,84 @@ function initial() {
                 currentUVEl.append(UVIndex);
             });
 
-            
-        })
+            let cityID = response.data.id;
+            let forecastQueryURL = "api.openweathermap.org/data/2.5/forecast?q=" + cityID + "&appid=" + APIKey;
+            axious.get(forecastQueryURL)
+            .then(function(response) {
+                fiveDayForecastEl.classList.remove("d-none");
+
+                const forecastEl = document.querySelectorAll(".forecast");
+                for (i = 0; i < forecastEl.length; i++) {
+                    forecastEl[i].innerHTML = "";
+                    const forecastIndex = i * 8 + 4;
+                    const forecastDate = new Date(response.data.list[forecastIndex].dt * 1000);
+                    const forecastDay = forecastDate.getDate();
+                    const forecastMonth = forecastDate.getMonth() + 1;
+                    const forecastYear = forecastDate.getFullYear();
+                    const forecastDateEl = document.createElement("p");
+                    forecastDateEl.setAttribute("class", forecast-date);
+                    forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
+                    forecastEl[i].append(forecastDateEl);
+
+                    const forecastWeatherEl = document.createElement("img");
+                    forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
+                    forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
+                    forecastEl[i].append(forecastWeatherEl);
+                    const forecastTempEl = document.createElement("p");
+                    forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
+                    forecastEl[i].append(forecastTempEl);
+                    const forecastHumidityEl = document.createElement("p");
+                    forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
+                    forecastEl[i].append(forecastHumidityEl);
+                }
+            })
+        });
+    }
+
+    searchEl.addEventListener("click", function () {
+        const searchTerm = cityEl.value;
+        getWeather(searchTerm);
+        searchHistory.push(searchTerm);
+        localStorage.setItem("search", JSON.stringify(searchHistory));
+        renderSearchHistory();
+    })
+
+    // Clear History button event listener
+    // Search history is cleared from the page when this button is clicked.
+
+    clearEl.addEventListener("click", function () {
+        localStorage.clear();
+        searchHistory = [];
+        renderSearchHistory();
+    })
+
+    function k2f(K) {
+        return Math.floor((K - 273.15) * 1.8 + 32);
+    }
+
+    // A history of cities searched by the user renders on the page.
+
+    function renderSearchHistory() {
+        historyEl.innerHTML = "";
+        for (let i = 0; i < searchHistory.length; i++) {
+            const historyItem = document.createElement("input");
+            historyItem.setAttribute("type", "text");
+            historyItem.setAttribute("readonly", true);
+            historyItem.setAttribute("class", "form-control d-block bg-white");
+            historyItem.setAttribute("value", searchHistory[i]);
+            historyItem.addEventListener("click", function () {
+                getWeather(historyItem.value);
+            })
+            historyEl.append(historyItem);
+        }
+    }
+
+    // Sets a condition for when to render the search history.
+
+    renderSearchHistory();
+    if (searchHistory.length > 0) {
+        getWeather(searchHistory[searchHistory.length - 1]);
     }
 }
+
+initial();
