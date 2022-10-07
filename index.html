@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body class="row">
+    <header class="col-12">
+        <h1>The Weather Dashboard!</h1>
+    </header>
+
+    <!-- handles search inputs -->
+    <main class="row col-12">
+        <form id="city-form" class="col-3">
+
+            <h2 class="container">Search for a City:</h2>
+            <input id="city" type="text" class="container form-input" placeholder="Search for a city..." />
+            <button type="submit" class="form-input container btn btn-primary">Search</button>
+            
+        </form>
+
+        <!-- displays current weather data -->
+        <div class="col-9">
+            <article id="current-weather" class="current-weather card container"></article>
+            <div class="container">
+                <h3>5-Day Forecast:</h3>
+
+                <!-- displays cards for 5-day forecast -->
+                <ul class="row">
+                    <li id="1" class="card col-2"></li>
+                    <li id="2" class="card col-2"></li>
+                    <li id="3" class="card col-2"></li>
+                    <li id="4" class="card col-2"></li>
+                    <li id="5" class="card col-2"></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- script links -->
+    <script src="./assets/main.js"></script>
+</body>
+
+</html>
