@@ -28,4 +28,15 @@ function fetchWeather(cityInformation, city) {
     let units = "imperial";
     let lang = "en";
     let APILink = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}$${lon}&appid=${APIKey}&units=${units}&lang=${lang}`;
-}
+
+    // fetches weather and location info.
+    fetch(APILink).then((res) => {
+        if(!res.ok)
+        throw new Error(res.statusText);
+        return res.json();
+    })
+    .then((weatherInformation) => {
+        loadPage(weatherInformation, city);
+    })
+    .catch(console.err);
+};
