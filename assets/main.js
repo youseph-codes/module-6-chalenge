@@ -51,4 +51,12 @@ function createHistory(city) {
     });
 
     console.log(historyList);
+    if(!historyList) {
+        cityHistory.push(city);
+        const e = document.createElement('button');
+        e.className = 'history-item form-input';
+        e.innerHTML = `${city}`;
+        e.type = 'submit';
+        form.appendChild(e);
+    }
 }
