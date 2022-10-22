@@ -60,3 +60,12 @@ function createHistory(city) {
         form.appendChild(e);
     }
 }
+
+// loads search history
+function loadPage(weatherInformation, city) {
+    console.log(weatherInformation);
+    let day = new Date;
+    createHistory(city);
+    loadDisplay(weatherInformation.current, day, city);
+    loadCards(weatherInformation.daily, day);
+};
