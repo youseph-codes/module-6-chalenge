@@ -69,3 +69,20 @@ function loadPage(weatherInformation, city) {
     loadDisplay(weatherInformation.current, day, city);
     loadCards(weatherInformation.daily, day);
 };
+
+// displays current weather info.
+function loadDisplay(currentWeather, day, city) {
+    let display = document.getElementById('current-weather');
+
+    display.innerHTML = `
+    <div>
+        <h2>${city} (${day.getMonth()}/${day.getDate()}/${day.getFullYear()})
+            <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png">
+        </h2>
+        <p>Tempurature: ${currentWeather.temp}F</p>
+        <p>Wind Speed: ${currentWeather.wind_speed}MPH</p>
+        <p>Humidity: ${currentWeather.humidity}%</p>
+        <p>UV Index: ${currentWeather.uvi}</p>
+    </div>`
+};
+
