@@ -40,3 +40,15 @@ function fetchWeather(cityInformation, city) {
     })
     .catch(console.err);
 };
+
+// create search history list
+function createHistory(city) {
+    let historyList = false;
+    cityHistory.forEach(city => {
+        if(city == city) {
+            historyList = true;
+        }
+    });
+
+    console.log(historyList);
+}
