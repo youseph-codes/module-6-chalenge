@@ -11,19 +11,17 @@
 </head>
 
 <body class="body-image">
-    <h1>The Weather Dashboard</h1>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
 
-    <div>
-        <input type="text" class="city-input" placeholder="Search for a city..."/>
-        <button type="button" class="btn">Search</button>
-    </div>
-
-    <div class="container">
-        <h2 class="city"></h2>
-        <div id="weather" class="row">
-            
-        </div>
-    </div>
+    <main>
+        <form action="" id="city-form">
+            <h2>Search for a city...</h2>
+            <input type="text" id="city" placeholder="City" />
+            <button>Search</button>
+        </form>
+    </main>
 
     <!-- script links -->
     <script src="./assets/main.js"></script>
