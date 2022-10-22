@@ -84,5 +84,19 @@ function loadDisplay(currentWeather, day, city) {
         <p>Humidity: ${currentWeather.humidity}%</p>
         <p>UV Index: ${currentWeather.uvi}</p>
     </div>`
+    console.log(display);
 };
+
+// UV index color coordination functions.
+function UVIndex(uvi) {
+    if (uvi < 3.3) {
+        return "green";
+    }
+    else if (uvi < 6.7) {
+        return "yellow";
+    }
+    else {
+        return "red";
+    }
+}
 
