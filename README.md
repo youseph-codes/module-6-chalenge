@@ -1,4 +1,4 @@
-# module-6-chalenge
+# module-6-challenge
 
 ## Deployed Link
 https://youseph-codes.github.io/module-6-chalenge/

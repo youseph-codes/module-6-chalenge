@@ -18,3 +18,25 @@ ul {
 ul li {
     color: #1C2321;
 }
+
+.container{
+    color: #1C2321;
+
+}
+
+.form-input { 
+	margin: 5px 5px;
+}
+
+.history-item {
+	background-color: #A9B4C2;
+	border-radius: 5px;
+	text-align: center;
+	font-style: bold;
+}
+
+.current-weather {
+	color: #1C2321;
+	border: solid #1C2321 4px;
+	height: 300px;
+}

@@ -88,6 +88,20 @@ function UVIndex(uvi) {
     }
 }
 
+function loadCards(dailyWeather, day) {
+    for (let i = 1; i < 6; i++) {
+        day.setDate(day.getDate() + 1);
+        document.getElementById(i).innerHTML = `<div class="card-body">
+        <h5 class="card-title">(${day.getMonth()}/${day.getDate()}/${day.getFullYear()})</h5>
+        <img src="http://openweathermap.org/img/wn/${dailyWeather[i].weather[0].icon}@2x.png" style="height: 3em">
+        <p class="card-text">Tempurature: ${dailyWeather[i].temp.day}°F</p>
+        <p class="card-text">Wind Speed: ${dailyWeather[i].wind_speed}MPH</p>
+        <p class="card-text">Humidity: ${dailyWeather[i].humidity}%</p>
+        </div>`
+    }
+};
+
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
