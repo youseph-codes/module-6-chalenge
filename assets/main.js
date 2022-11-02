@@ -75,3 +75,15 @@ function loadDisplay(currentWeather, day, city) {
     <p class="card-text">UV Index: <b class="uvi ${UVIndex(currentWeather.uvi)}">${currentWeather.uvi}</b></p>
     </div>`
 };
+
+function UVIndex(uvi) {
+    if (uvi < 3.3) {
+        return 'green';
+    }
+    else if (uvi < 6.7) {
+        return 'yellow';
+    }
+    else {
+        return 'red';
+    }
+}
