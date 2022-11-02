@@ -40,3 +40,20 @@ ul li {
 	border: solid #1C2321 4px;
 	height: 300px;
 }
+
+.uvi {
+	padding: 5px 15px;
+	border-radius: 20%;
+}
+
+.green {
+    background-color: rgb(0, 200, 0);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 90);
+}
+
+.red {
+    background-color: rgb(255, 50, 50);
+}
