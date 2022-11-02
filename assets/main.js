@@ -18,6 +18,25 @@ function fetchCity(city) {
     .catch(console.err);
 };
 
+function createHistory(city) {
+    let historyList = false;
+    cityHistory.forEach(city => {
+        if (city == city) {
+            historyList = true;
+        };
+    });
+
+    console.log(historyList);
+    if (!historyList) {
+        cityHistory.push(city);
+        const e = document.createElement('button');
+        e.className = 'container history-item for-input';
+        e.innerHTML = `${city}`;
+        e.type = 'submit';
+        form.appendChild(e);
+    }
+}
+
 function fetchWeather(cityInfo, city) {
     let latitude = cityInfo.lat;
     let longitude = cityInfo.lon;
@@ -37,3 +56,14 @@ function fetchWeather(cityInfo, city) {
     .catch(console.err);
 };
 
+function loadDisplay(currentWeather, day, city) {
+    let display = document.getElementById('current-weather');
+    display.innerHTML = `<div class="card-body">
+    <h2 class="card-title">${city} (${day.getMonth()}/${day.getDate()}/${day.getFullYear()})
+    <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png"></h2>
+    <p class="card-text">Tempurature: ${currentWeather.temp}°F</p>
+    <p class="card-text">Wind Speed: ${currentWeather.wind_speed}MPH</p>
+    <p class="card-text">Humidity: ${currentWeather.humidity}%</p>
+    <p class="card-text">UV Index: <b class="uvi ${UVIndex(currentWeather.uvi)}">${currentWeather.uvi}</b></p>
+    </div>`
+};
