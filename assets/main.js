@@ -87,3 +87,14 @@ function UVIndex(uvi) {
         return 'red';
     }
 }
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (event.submitter.innerText != "Search") {
+        fetchCity(event.submitter.innerText);
+    }
+    else {
+        fetchCity(form.elements['city'].value);
+    }
+});
