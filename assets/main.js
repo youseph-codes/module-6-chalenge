@@ -37,6 +37,14 @@ function createHistory(city) {
     }
 }
 
+function loadPage(weatherInfo, city) {
+    console.log(weatherInfo);
+    let day = new Date;
+    createHistory(city);
+    loadDisplay(weatherInfo.current, day, city);
+    loadCards(weatherInfo.daily, day);
+};
+
 function fetchWeather(cityInfo, city) {
     let latitude = cityInfo.lat;
     let longitude = cityInfo.lon;
