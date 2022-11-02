@@ -1,0 +1,20 @@
+body {
+    background: #EEF1EF;
+}
+
+header {
+    text-align: center;
+    background: #7D98A1;
+}
+
+h1, h2, h3 {
+    color: #1C2321
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    color: #1C2321;
+}
