@@ -25,4 +25,15 @@ function fetchWeather(cityInfo, city) {
     let language = 'en';
     let units = 'imperial';
     let url = `http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=${units}&lang=${language}`;
-}
+
+    fetch(url)
+    .then((res) => {
+        if (!res.ok) throw new Error(res.statusText);
+        return res.json();
+    })
+    .then((weatherInfo) => {
+        loadPage(weatherInfo, city);
+    })
+    .catch(console.err);
+};
+
